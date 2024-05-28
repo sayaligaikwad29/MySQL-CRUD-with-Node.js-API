@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  nodejsmysqlcrud:
+    image: nodejsmysqlcrud
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    depends_on:
+      - db 
+  db:
+    image: mysql:5.7
+    ports:
+     - 3315:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=root@123
+     - MYSQL_DATABASE=demo
+     - MYSQL_USER=admin
+     - MYSQL_PASSWORD=root
+     - MYSQL_HOST="localhost"
+volumes:
+  mysql-data:
