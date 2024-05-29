@@ -16,8 +16,8 @@ steps:
     gcloud deploy apply --file deploy/pipeline.yaml --region=us-central1
     gcloud deploy apply --file deploy/dev.yaml --region=us-central1
     gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gke-cicd-pipeline --region=us-central1 --skaffold-file=./kubernetes/skaffold.yaml &&
-    kubectl apply -f /kubernetes/secrets.yaml &&
-    kubectl apply -f /kubernetes/volume.yaml
+    kubectl apply -f ./kubernetes/secrets.yaml &&
+    kubectl apply -f ./kubernetes/volume.yaml
 options:
   logging: CLOUD_LOGGING_ONLY  # Adjust logging option as per your requirements
 
