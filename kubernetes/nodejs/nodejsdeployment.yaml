@@ -16,7 +16,7 @@ spec:
       - name: nodejs
         image: gcr.io/lateral-booking-419709/mysql-crud-with-node-js-api:latest  # Replace with your Node.js Docker image
         ports:
-        - containerPort: 3000
+        - containerPort: 8000
         env:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
