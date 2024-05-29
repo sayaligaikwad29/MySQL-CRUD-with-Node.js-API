@@ -1,0 +1,14 @@
+# This file is setting up the parameters for building and deploying Kubernetes applications using Skaffold
+apiVersion: skaffold/v4beta9 # it defines the API version 
+kind: Config
+build:    # The build section includes tag policies for git commits and local builds
+  tagPolicy:
+    gitCommit: {}
+  local: {}
+manifests:
+  rawYaml:
+    - ./kubernetes/*
+deploy:   # deploy section uses kubectl for deployment
+  kubectl: {}
+  logs:    # sets a prefix for container logs
+    prefix: container
