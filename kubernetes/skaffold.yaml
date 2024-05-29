@@ -7,7 +7,10 @@ build:    # The build section includes tag policies for git commits and local bu
   local: {}
 manifests:
   rawYaml:
-    - ./kubernetes/*
+    - ./kubernetes/volume.yaml
+    - ./kubernetes/secrets.yaml
+    - ./kubernetes/app1.yaml
+    - ./kubernetes/app2.yaml
 deploy:   # deploy section uses kubectl for deployment
   kubectl: {}
   logs:    # sets a prefix for container logs
