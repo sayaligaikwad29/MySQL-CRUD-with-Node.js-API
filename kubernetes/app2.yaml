@@ -38,6 +38,11 @@ spec:
               secretKeyRef:
                 name: mysecret
                 key: MYSQL_USER
+          - name: MYSQL_HOST
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: MYSQL_HOST
 
 ---
 apiVersion: v1
