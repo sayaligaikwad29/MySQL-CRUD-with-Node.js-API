@@ -13,9 +13,8 @@ steps:
   args:
   - -c   # used to specify the command that follows should be executed by the shell So, when you see "-c" followed by a command, it means that the shell will run that command
   - |
-    TIMESTAMP=$(date +%Y%m%d%H%M%S) 
     
-    RELEASE_NAME="app-release-${TIMESTAMP}-${SHORT_SHA}"
+    RELEASE_NAME="app-release-$(date +%F_%H:%M:%S)-${SHORT_SHA}"
 
     gcloud deploy apply --file deploy/pipeline.yaml --region=us-central1
     gcloud deploy apply --file deploy/dev.yaml --region=us-central1
