@@ -5,6 +5,7 @@ const mysqlPool = mysql.createPool({
     // user: 'admin',
     // password: 'root',
     // database: 'demo'
+    
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
