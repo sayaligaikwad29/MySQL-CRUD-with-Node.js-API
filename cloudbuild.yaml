@@ -16,7 +16,6 @@ steps:
     gcloud deploy apply --file deploy/pipeline.yaml --region=us-central1
     gcloud deploy apply --file deploy/dev.yaml --region=us-central1
     gcloud deploy releases create "app-release-$(date +%F%H%M%S)-${SHORT_SHA}" --delivery-pipeline=gke-cicd-pipeline --region=us-central1 --skaffold-file=skaffold.yaml
-
 substitutions:
   _TIMESTAMP: "${TIMESTAMP}"
   _RELEASE_NAME: "app-release-${TIMESTAMP}-${SHORT_SHA}"
